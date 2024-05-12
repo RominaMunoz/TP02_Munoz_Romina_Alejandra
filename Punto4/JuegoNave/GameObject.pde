@@ -1,4 +1,4 @@
-abstract class GameObject implements IDisplayable, IMoveable{
+abstract class GameObject implements IDisplayable{
   protected PVector posicion;
   protected PImage img;
   
@@ -8,5 +8,4 @@ abstract class GameObject implements IDisplayable, IMoveable{
   }
   
   public abstract void display();
-  public abstract void mover();
 }

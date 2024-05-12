@@ -1,4 +1,4 @@
-class Asteroide extends GameObject {
+class Asteroide extends GameObject implements IMoveable {
   
   private float velocidad;
   

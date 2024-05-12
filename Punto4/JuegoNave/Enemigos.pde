@@ -1,4 +1,4 @@
-class Enemigos extends GameObject {
+class Enemigos extends GameObject implements IMoveable{
   
   private float velocidad;
   
