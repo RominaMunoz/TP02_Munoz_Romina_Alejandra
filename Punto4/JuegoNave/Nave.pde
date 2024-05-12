@@ -1,4 +1,4 @@
-class Nave extends GameObject{
+class Nave extends GameObject implements IControler{
   
   private PVector velocidad;
   private int direccion;
