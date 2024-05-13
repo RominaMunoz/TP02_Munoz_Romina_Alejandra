@@ -1,10 +1,12 @@
-class Asteroide extends GameObject implements IMoveable {
+class Asteroide extends GameObject {
   
   private float velocidad;
+  private PImage img;
   
   public Asteroide(PVector posicion, PImage img, float velocidad){
-    super(posicion, img);
+    super(posicion);
     this.velocidad = velocidad;
+    this.img = img;
   }
   
   public void display(){

@@ -1,6 +1,7 @@
 private Nave nave;
 private Asteroide[] roca;
 private Enemigos[] alien;
+private Balas[] bala;
 
 
 public void setup(){
@@ -14,6 +15,7 @@ public void setup(){
   for (int i= 0; i < 5; i++){
     alien[i] = new Enemigos(new PVector(random(width), 0), loadImage("enemigo.png"), random(1,2));
   }
+  bala = new Balas[10];
 }
 
 public void draw(){
@@ -26,7 +28,19 @@ public void draw(){
     alien[i].display();
     alien[i].mover();
   }
+  for (int i= 0; i < bala.length; i++){
+    if(bala[i] != null){
+      bala[i].display();
+      bala[i].mover();
+    }
+  }
   nave.display();
   nave.mover();
   nave.readCommand();
+}
+
+public void keyReleased(){
+  if(key == ' '){
+    nave.dispararBalas();
+  }
 }

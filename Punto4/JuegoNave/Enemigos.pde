@@ -1,10 +1,12 @@
-class Enemigos extends GameObject implements IMoveable{
+class Enemigos extends GameObject{
   
   private float velocidad;
+  private PImage img;
   
   public Enemigos(PVector posicion, PImage img, float velocidad){
-    super(posicion, img);
+    super(posicion);
     this.velocidad = velocidad;
+    this.img = img;
   }
   
   public void display(){

@@ -1,11 +1,13 @@
-class Nave extends GameObject implements IControler, IMoveable{
+class Nave extends GameObject implements IControler{
   
   private PVector velocidad;
   private int direccion;
+  private PImage img;
 
   public Nave(PVector posicion, PImage img, PVector velocidad) {
-    super (posicion, img);
+    super (posicion);
     this.velocidad = velocidad;
+    this.img = img;
   }
   
   public void display(){
@@ -56,6 +58,13 @@ class Nave extends GameObject implements IControler, IMoveable{
       if(key == RIGHT || key == 'd'){
         direccion = 4;
       }
+    }
+  }
+  
+  public void dispararBalas(){
+    PVector posNewBala= new PVector(this.posicion.x, this.posicion.y);
+    for (int i= 0; i < 9; i++){
+      bala[i] = new Balas(posNewBala);
     }
   }
 }
