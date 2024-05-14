@@ -1,17 +1,20 @@
 SpawnerAuto spawner;
 JoyPad control;
 Rana rana;
+Fondo fondo;
 
 public void setup(){
   size(700,600);
   spawner = new SpawnerAuto();
   control = new JoyPad();
   rana = new Rana(width/2, height, loadImage("rana.png"), new PVector(5,5));
+  fondo = new Fondo(width/2,height/2,loadImage("fondo.jpg"));
   spawner.generarAuto();
 }
 
 public void draw(){
   background(0);
+  fondo.display();
   rana.display();
   if (control.isArribaPressed()){
     rana.mover(1);

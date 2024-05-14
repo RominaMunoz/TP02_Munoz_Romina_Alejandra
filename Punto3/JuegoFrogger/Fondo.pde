@@ -8,5 +8,6 @@ class Fondo extends GameObject{
   }
   
   public void display(){
+    image(img, posicion.x, posicion.y, width, height);
   }
 }
