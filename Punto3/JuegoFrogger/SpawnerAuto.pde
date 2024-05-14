@@ -6,7 +6,7 @@ class SpawnerAuto{
   }
   public void generarAuto(){
     for(int i = 0; i < auto.length; i++){
-      auto[i]= new Auto(0, i*height/5);
+      auto[i]= new Auto(0, i*height/6);
     }
   }
   
