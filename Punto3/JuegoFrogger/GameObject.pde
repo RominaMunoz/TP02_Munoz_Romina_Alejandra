@@ -1,10 +1,8 @@
 abstract class GameObject{
-  private PVector posicion;
-  private PImage img;
+  protected PVector posicion;
   
-  public GameObject(int x, int y, PImage img){
+  public GameObject(int x, int y){
     this.posicion= new PVector(x,y);
-    this.img= img;
   }
   
   public abstract void display();
