@@ -1,11 +1,10 @@
 class Auto extends GameObject{
   
-  private int velocidad;
-  private float dist= 10;
+  private float velocidad;
+  private int dist= 10;
   
-  public Auto(int x, int y, int velocidad){
+  public Auto(int x, int y){
     super(x,y);
-    this.velocidad= velocidad;
   }
   
   public void display(){
@@ -25,7 +24,8 @@ class Auto extends GameObject{
     rect(posicion.x-dist, posicion.y, 10, 10, 3);
   }
   
-  public void mover(){
+  public void mover(float direccion){
+    this.velocidad= direccion;
     posicion.x += this.velocidad;
     if(posicion.x>width){
       posicion.x=0;
