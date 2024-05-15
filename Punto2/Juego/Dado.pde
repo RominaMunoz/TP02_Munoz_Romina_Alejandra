@@ -1,9 +1,12 @@
 class Dado extends GameObject{
   
   private int valor;
+  private String numero; 
   
   public Dado(float x, float y){
     super(x,y);
+    this.valor=1;
+    this.numero="uno";
   }
   
   
@@ -12,26 +15,24 @@ class Dado extends GameObject{
   }
   
   public void display(){
+    fill(#E462FF);
     rectMode(CENTER);
     rect(posicion.x, posicion.y, 150, 150);
-    fill(#E462FF);
+    fill(#2A0050);
     switch(valor){
       case 1:{
         ellipse(posicion.x, posicion.y, 30, 30);
-        fill(#2A0050);
         break;
       }
       case 2:{
         ellipse(posicion.x-50, posicion.y, 30, 30);
         ellipse(posicion.x+50, posicion.y, 30, 30);
-        fill(#2A0050);
         break;
       }
       case 3:{
         ellipse(posicion.x-50, posicion.y-50, 30, 30);
         ellipse(posicion.x, posicion.y, 30, 30);
         ellipse(posicion.x+50, posicion.y+50, 30, 30);
-        fill(#2A0050);
         break;
       }
       case 4:{
@@ -39,7 +40,7 @@ class Dado extends GameObject{
         ellipse(posicion.x-50, posicion.y+50, 30, 30);
         ellipse(posicion.x+50, posicion.y-50, 30, 30);
         ellipse(posicion.x+50, posicion.y+50, 30, 30);
-        fill(#2A0050);
+
         break;
       }
       case 5:{
@@ -48,7 +49,6 @@ class Dado extends GameObject{
         ellipse(posicion.x+50, posicion.y-50, 30, 30);
         ellipse(posicion.x+50, posicion.y+50, 30, 30);
         ellipse(posicion.x, posicion.y, 30, 30);
-        fill(#2A0050);
         break;
       }
       case 6:{
@@ -58,7 +58,39 @@ class Dado extends GameObject{
         ellipse(posicion.x-50, posicion.y-50, 30, 30);
         ellipse(posicion.x+50, posicion.y+50, 30, 30);
         ellipse(posicion.x-50, posicion.y+50, 30, 30);
-        fill(#2A0050);
+        break;
+      }
+    }
+  }
+  
+  public void mostrarValor(){
+    fill(0);
+    textMode(CENTER);
+    textSize(30);
+    text(numero, posicion.x+150, posicion.y-150);
+    switch(valor){
+      case 1:{
+        this.numero= "uno";
+        break;
+      }
+      case 2:{
+        this.numero= "dos";
+        break;
+      }
+      case 3:{
+        this.numero= "tres";
+        break;
+      }
+      case 4:{
+        this.numero= "cuatro";
+        break;
+      }
+      case 5:{
+        this.numero= "cinco";
+        break;
+      }
+      case 6:{
+        this.numero= "seis";
         break;
       }
     }

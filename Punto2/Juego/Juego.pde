@@ -11,10 +11,11 @@ public void setup(){
 public void draw(){
   tablero.display();
   dado.display();
+  dado.mostrarValor();
 }
 
 public void keyPressed(){
   if(key==' '){
-    dado.generarValor(int(random(1,6)));
+    dado.generarValor(int(random(1,7)));
   }
 }

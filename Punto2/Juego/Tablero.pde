@@ -5,13 +5,11 @@ class Tablero extends GameObject{
   }
   
   public void display(){
+    fill(#7600FF);
     rectMode(CORNER);
     rect(posicion.x, posicion.y, (width-100), (height-100));
-    fill(#7600FF);
   }
   
-  public void mostrarValorDado(){
-    
+  public void mostrarResultado(){
   }
-  
 }
