@@ -12,10 +12,15 @@ public void draw(){
   tablero.display();
   dado.display();
   dado.mostrarValor();
+  if(key=='d'){
+    tablero.mostrarResultado();
+  }
 }
 
-public void keyPressed(){
+public void keyReleased(){
   if(key==' '){
-    dado.generarValor(int(random(1,7)));
+    int valor = int(random(1, 7));
+    dado.generarValor(valor);
+    tablero.setValor(valor);
   }
 }

@@ -65,7 +65,6 @@ class Dado extends GameObject{
   
   public void mostrarValor(){
     fill(0);
-    textMode(CENTER);
     textSize(30);
     text(numero, posicion.x+150, posicion.y-150);
     switch(valor){
@@ -94,5 +93,9 @@ class Dado extends GameObject{
         break;
       }
     }
+  }
+  
+  public int getValor(){
+    return this.valor;
   }
 }
