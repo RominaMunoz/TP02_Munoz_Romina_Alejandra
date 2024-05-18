@@ -1,20 +1,21 @@
 class Tablero extends GameObject{
   
   private Dado[] dado;
+  private int[] valGenerados;
   private int valor;
   
   public Tablero(float x, float y){
     super(x,y);
     dado= new Dado[40];
+    valGenerados = new int[40];
+    for (int i = 0; i < dado.length; i++) {
+      dado[i] = new Dado(posicion.x+(i/10)*150, posicion.y+(i%10)*35);
+      valGenerados[i] = 0;
+    }
+    this.valor = 0;
   }
   
   public void display(){
-    fill(#7600FF);
-    rectMode(CORNER);
-    rect(posicion.x, posicion.y, (width-100), (height-100));
-  }
-  
-  public void mostrarResultado(){
     fill(255);
     rectMode(CORNER);
     rect(posicion.x, posicion.y, (width-100), (height-100));
@@ -22,26 +23,24 @@ class Tablero extends GameObject{
       stroke(3);
       line(posicion.x+l, posicion.y, posicion.x+l, posicion.y+400);
     }
-    
-    for(int i = 0; i < dado.length; i++){
-      dado[i]= new Dado(i*(posicion.x+75)/5, posicion.y+60);
-      if (posicion.x > 525){
-        posicion.y += 40;
-      }
-    }
-    for(int i = 0; i < dado.length; i++){
-      if (dado[i] != null) {
-        dado[i].mostrarValor();
+  }
+  
+  public void mostrarResultado(){
+    for (int i = 0; i < valGenerados.length; i++){
+      if (valGenerados[i] != 0) {
+        textAlign(CENTER, CENTER);
+        textSize(20);
+        fill(0);
+        text(valGenerados[i], posicion.x + (i/10) * 150 + 75, posicion.y + (i % 10) * 35 + 40);
       }
     }
   }
   
   public void setValor(int valor) {
-    for(int i = 0; i < dado.length; i++){
-      if (dado[i] != null) {
-        dado[i] = new Dado(posicion.x + i * 30, posicion.y + 60);
-      }
-      dado[i].generarValor(valor);
+    if (this.valor < dado.length) {
+      dado[this.valor].generarValor(valor);
+      valGenerados[this.valor]= valor;
+      this.valor++;
     }
   }
 }

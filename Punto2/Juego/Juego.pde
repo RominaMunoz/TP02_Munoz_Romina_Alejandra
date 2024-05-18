@@ -9,10 +9,10 @@ public void setup(){
 }
 
 public void draw(){
-  tablero.display();
   dado.display();
   dado.mostrarValor();
   if(key=='d'){
+    tablero.display();
     tablero.mostrarResultado();
   }
 }
